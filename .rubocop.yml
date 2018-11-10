@@ -1,0 +1,11 @@
+Naming/UncommunicativeMethodParamName:
+  Exclude:
+    - 'lib/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Exclude:
+    - 'spec/**/*'
