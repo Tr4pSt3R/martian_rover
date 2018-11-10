@@ -1,4 +1,5 @@
 # Problem: Martian Robots
+
 # The Problem
 The surface of Mars can be modelled by a rectangular grid around which robots are able to move according to instructions provided from Earth. You are to write a program that determines each sequence of robot positions and reports the final position of the robot.
 
@@ -39,3 +40,15 @@ For each robot position/instruction in the input, the output should indicate the
 1 1 E
 3 3 N LOST
 2 3 S
+
+## Further Improvements
+1. There are three outstanding Rubocop violations to clear up in the _perform method_ which will need further consideration. The most pressing of them being the _CyclomaticComplexity_ issue.
+
+2. Every Robot is currently designed to be self-aware of the terrain it’s traversing. Ideally the surface object should be de-coupled from the Robot. It may be best to have a surface “map” which the Robot class knows about rather than the individual robots.
+
+3. I have written a Ruby shell script for this as I’m not entirely sure about how you envisaged how the program will be run.
+
+4. Interactively receive inputs using the _gets_ method in Ruby to receive inputs.
+
+## Limitations
+1. It will be very easy to mix up the command-line input. This is an area that can be improved upon. The underlying implementation is set up to allow for this.
