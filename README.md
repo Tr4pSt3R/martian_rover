@@ -41,6 +41,28 @@ For each robot position/instruction in the input, the output should indicate the
 3 3 N LOST\
 2 3 S
 
+## Usage
+The main program can be run using from this Ruby shell script `./bin/mars_robot_control_centre`.
+It takes arguments from the commandline.
+
+`./bin/mars_robot_control_centre x y robot_x robot_y robot_orientation instruction_set`
+
+Where:
+  - `x` -> _x coordinate of the rectangular world. Defines width of the "world"_
+  - `y` -> _y coordinate of the rectangular world. Defines length of the "world"_
+  - `robot_x` -> _starting position of the robot along the x-axis_
+  - `robot_y` -> _starting position of the robot along the y-axis_
+  - `instruction_set` -> _instructions to be performed by the robot i.e. L, R or F_
+
+These generic instructions are suitable for controlling a single robot. However, this system is able to allow a maximum of three robots to be controlled. Please see below for examples on how to run this program for multiple robots.
+
+Run for one robot `./bin/mars_robot_control_centre 5 3 1 1 E RFRFRFRF`
+
+Run for two robots `./bin/mars_robot_control_centre 5 3 1 1 E RFRFRFRF 3 2 N FRRFLLFFRRFLL`
+
+Run for three robots `./bin/mars_robot_control_centre 5 3 1 1 E RFRFRFRF 0 3 W LLFFFLFLFL 3 2 N FRRFLLFFRRFLL`
+
+
 ## Further Improvements
 1. There are three outstanding Rubocop violations to clear up in the _perform method_ which will need further consideration. The most pressing of them being the _CyclomaticComplexity_ issue.
 
